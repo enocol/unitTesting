@@ -7,7 +7,6 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/index.js":
@@ -16,7 +15,8 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _length_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./length.js */ \"./src/length.js\");\n\r\n\r\nconst string = 'This string has a length property of number';\r\nconst result = (0,_length_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(string);\r\nconsole.log(result);\r\n\n\n//# sourceURL=webpack://unittesting/./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _length_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./length.js */ \"./src/length.js\");\n/* harmony import */ var _length_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_length_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _reversed_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reversed.js */ \"./src/reversed.js\");\n/* harmony import */ var _reversed_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_reversed_js__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\r\n\r\nconst string = 'This.';\r\nconst result = _length_js__WEBPACK_IMPORTED_MODULE_0___default()(string);\r\n\r\nconst join = _reversed_js__WEBPACK_IMPORTED_MODULE_1___default()(result);\r\nconsole.log(join);\r\n\n\n//# sourceURL=webpack://unittesting/./src/index.js?");
 
 /***/ }),
 
@@ -24,9 +24,19 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _len
 /*!***********************!*\
   !*** ./src/length.js ***!
   \***********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst stringLength = (string) => {\r\n  const length = string.length;\r\n\r\n  return length;\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (stringLength);\r\n\n\n//# sourceURL=webpack://unittesting/./src/length.js?");
+eval("const stringLength = (string) => {\r\n  const length = string.length;\r\n  if (length < 1 || length > 10) {\r\n    throw new Error('length can not be less than 1 or than 10');\r\n  }\r\n  return length;\r\n};\r\n\r\nmodule.exports = stringLength;\r\n\n\n//# sourceURL=webpack://unittesting/./src/length.js?");
+
+/***/ }),
+
+/***/ "./src/reversed.js":
+/*!*************************!*\
+  !*** ./src/reversed.js ***!
+  \*************************/
+/***/ ((module) => {
+
+eval("const reversed = (string) => {\r\n  const split = string.split('');\r\n  const reversed = split.reverse();\r\n  const join = reversed.join(' ');\r\n\r\n  return join;\r\n};\r\n\r\nmodule.exports = reversed;\r\n\n\n//# sourceURL=webpack://unittesting/./src/reversed.js?");
 
 /***/ })
 
@@ -57,6 +67,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
